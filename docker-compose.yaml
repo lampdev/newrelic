@@ -5,3 +5,13 @@ services:
       - main
     container_name: test-project-newrelic
     image: newrelic/php-daemon
+  php:
+    build:
+      context: './docker/php'
+      dockerfile: Dockerfile
+      args:
+        NEWRELIC_KEY: "xxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+        NEWRELIC_APP_NAME: "Some Test Application"
+        NEWRELIC_DAEMON_ADDRESS: "newrelic:31339"
+networks:
+  main:
