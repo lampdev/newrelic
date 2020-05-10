@@ -1,0 +1,7 @@
+version: "3.6"
+services:
+  newrelic:
+    networks:
+      - main
+    container_name: test-project-newrelic
+    image: newrelic/php-daemon
